@@ -2,3 +2,8 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+body {
+    background-image: url('./assets/imgs/dark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
