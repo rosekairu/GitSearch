@@ -21,7 +21,7 @@ export class ProfileService {
   }
 
   searchUserName(searchUser: string) {
-    interface Responce {
+    interface ApiResponse {
       login: string;
       avatar_url: string;
       url: string;
@@ -34,7 +34,7 @@ export class ProfileService {
 
     return new Promise((resolve, reject) => {
       this.http
-        .get<Responce>(
+        .get<ApiResponse>(
           'https://api.github.com/users/' +
             searchUser +
             '?access_token=' +
