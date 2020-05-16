@@ -9,11 +9,12 @@ import { Repo } from '../../repo';
 })
 export class RepositoriesComponent implements OnInit {
   repo: Repo;
-  constructor(public repoService: ProfileService) {}
+
+  constructor(public profileService: ProfileService) {}
   repoSearch(searchUser) {
-    this.repoService.searchUserRepo(searchUser).then(
+    this.profileService.getRepo(searchUser).then(
       (results) => {
-        this.repo = this.repoService.userRepo;
+        this.repo = this.profileService.gitRepos;
         console.log(this.repo);
       },
       (error) => {

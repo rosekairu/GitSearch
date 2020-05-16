@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <app-search-form (searchOutput)="repoSearch($event)"></app-search-form>
     <div class="container">
-        <div class="container-repos">
-            <div class="card" appHighlight *ngFor="let Repo of repo" style="width: 20rem;">
+        <div class="container gitRepos">
+            <div class="card" appHighlight *ngFor="let Repositories of repo" style="width: 20rem;" class="repo">
                 <div class="card-body">
                     <h5 class="card-title"> Repository Name: &nbsp;{{repo.name}}</h5>
                     <div class="card-text">

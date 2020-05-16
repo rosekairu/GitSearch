@@ -13,11 +13,11 @@ import { environment } from 'src/environments/environment';
 })
 export class ProfileService {
   userName: User;
-  userRepo: Repo;
+  gitRepos: Repo;
 
   constructor(private http: HttpClient) {
     this.userName = new User('', '', '', '', 0, 0, 0, new Date());
-    this.userRepo = new Repo('', '', '', 0, 0, 0, new Date());
+    this.gitRepos = new Repo('', '', '', 0, 0, 0, new Date());
   }
 
   searchUserName(searchUser: string) {
@@ -55,7 +55,7 @@ export class ProfileService {
     });
   }
 
-  searchUserRepo(searchUser: string) {
+  getRepo(searchUser) {
     interface Repo {
       name: string;
       html_url: string;
@@ -77,8 +77,7 @@ export class ProfileService {
         .toPromise()
         .then(
           (results) => {
-            this.userRepo = results;
-            console.log(this.userRepo);
+            this.gitRepos = results;
             resolve();
           },
           (error) => {

@@ -10,9 +10,9 @@ import { AboutComponent } from '../app/Components/about/about.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'user-profile', component: UsersComponent },
+  { path: 'user-search', component: UsersComponent },
   { path: 'repo-search', component: RepositoriesComponent },
-  { path: '', redirectTo: 'user-profile', pathMatch: 'full' },
+  { path: '', redirectTo: 'user-search', pathMatch: 'full' },
 
   { path: '**', component: NotFoundComponent },
 ];
