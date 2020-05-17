@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <app-search-form (emitUsers)="myName($event)"></app-search-form>
+            <div *ngFor='let theUser of theUsers'>
+                <p style="font-size: xx-large;">{{theUser.name}}<br>GitHub Name: <span style="color: aqua;">{{theUser.login}}</span> </p>
+                <img src="{{theUser.avatar_url}}" alt=""><br>
+                <p style="font-size: xx-large; color: bisque;">Joined: <span style="color: aqua;">{{theUser.created_at | date}}</span> </p>
+                &nbsp;
+                <p style="color: aqua; font-weight: bold;"> <span style="color: cyan;">Total Public Repositories </span> {{theUser.public_repos}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<h2 class="text-center" style="color: cyan;">Public Repositories</h2>
+<input type="text" class="form-control" name="" placeholder="" id="repoSearch"><br>
+<div class="card-columns container-fluid">
+    <div *ngFor='let theRepository of theRepositories'>
+        <div *ngFor='let rep of theRepository' id="repo" class="card">
+            <h4 class="card-header" style="background-color: darkcyan;">{{rep.name}}</h4>
+            <p class="card-body">Description: {{rep.description}} <br> <br> Forks: {{rep.forks}}<i> <br> <br> Languages:
+          {{rep.language}}</i></p>
+            <p style="margin-left: .2in;">Created : &nbsp; {{rep.created_at | date}}</p>
+            <a class="card-footer" href="{{rep.html_url}}"><button class="btn btn-outline-primary"> <span
+            style="color: black;">View on
+            github </span> </button></a>
+        </div>
+    </div>
+</div>

@@ -3,9 +3,7 @@ export class Repo {
     public name: string,
     public html_url: string,
     public description: string,
-    public stars: number,
-    public forks: number,
-    public languages: number,
+    public language: string,
     public created_at: Date
   ) {}
 }

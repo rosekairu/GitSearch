@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../Services/profile.service';
+//import { HttpServiceService } from '../../Services/http-service.service';
 import { User } from '../../user';
 import { Repo } from '../../repo';
 
@@ -26,10 +27,15 @@ export class UsersComponent implements OnInit {
         console.log(error);
       }
     );
-    this.repoService.searchUserRepo(searchUser).then((results) => {
-      this.repo = this.repoService.userRepo;
-      console.log(Error);
-    });
+    this.repoService.getRepo(searchUser).then(
+      (results) => {
+        this.repo = this.repoService.gitRepos;
+        console.log(this.repo);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   ngOnInit() {

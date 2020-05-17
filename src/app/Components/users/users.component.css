@@ -1,0 +1,108 @@
+.overlay {
+    margin-top: 0.5in;
+    color: aliceblue;
+    border: 1px solid cadetblue;
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card {
+    background-color: darkgrey;
+    box-shadow: 3px 3px 5px black;
+}
+
+.repo {
+    background-color: burlywood;
+    color: black;
+    margin-bottom: 2%;
+    border-radius: 4px;
+    box-shadow: 3px 3px 5px black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    margin-top: 1.4%;
+    margin-bottom: 0.5%;
+}
+
+.user {
+    margin-left: 1;
+    margin-top: 1%;
+}
+
+#imgcard {
+    margin-top: 0.5in;
+    margin-bottom: .3in;
+    border-radius: 8px;
+    margin-right: 5%;
+}
+
+p {
+    font-size: 18px;
+}
+
+.name {
+    font-size: 18px;
+}
+
+.btn {
+    margin-top: -1%;
+    float: right;
+}
+
+.gitRepos {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.description {
+    min-height: 80px;
+}
+
+.top {
+    font-weight: bold;
+}
+
+.btn-group {
+    margin-left: 13px;
+}
+
+.repo h2 {
+    font-size: 45px;
+    margin-bottom: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.follow {
+    border-radius: 50%;
+    padding: 1%;
+    float: right;
+    margin-right: 20%;
+}
+
+.datejoined {
+    float: right;
+    margin-right: 14%;
+}
+
+#profile {
+    font-size: 14px;
+    color: blue;
+}
+
+.forks {
+    font-size: 10px;
+}
+
+#created {
+    font-weight: 300;
+    font-family: sans-serif;
+}
