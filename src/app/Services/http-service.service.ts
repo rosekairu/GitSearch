@@ -12,7 +12,7 @@ export class HttpServiceService {
   userRepository: Repo[] = [];
 
   url = 'https://api.github.com/users/';
-  apiKey = '?access_token=' + environment.apiKey;
+  apiKey = 'environment.apiKey';
 
   constructor(private http: HttpClient) {}
   userSearch(userName: string) {
@@ -26,9 +26,10 @@ export class HttpServiceService {
       created_at: Date;
     }
     let promise = new Promise((resolve, reject) => {
-      this.userProfile = [];
       this.http
-        .get<data>(this.url + userName + this.apiKey)
+        .get<data>(
+          `${environment.Url}${userName}?client_avatar=${environment.apiKey}`
+        )
         .toPromise()
         .then(
           (result) => {
