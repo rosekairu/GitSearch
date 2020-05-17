@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./repositories.component.css'],
 })
 export class RepositoriesComponent implements OnInit {
+<<<<<<< HEAD
   goToUrl(id) {
     this.router.navigate(['/users', id]);
   }
@@ -50,6 +51,16 @@ export class RepositoriesComponent implements OnInit {
         this.repositories = this.repoHttpService.repositories;
         let noOfReposFound = this.repositories.length;
         console.log(noOfReposFound);
+=======
+  repo: Repo;
+
+  constructor(public profileService: ProfileService) {}
+  repoSearch(searchUser) {
+    this.profileService.getRepo(searchUser).then(
+      (results) => {
+        this.repo = this.profileService.gitRepos;
+        console.log(this.repo);
+>>>>>>> 31cdabe385e12cb03cec8ee6d4302f036a8aa664
       },
       (error) => {
         console.log(error);

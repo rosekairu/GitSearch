@@ -149,4 +149,9 @@ hr {
 #created {
     font-weight: 400;
     font-family: 'Pangolin', cursive;
+    color: darkturquoise;
+}
+
+.form-control::placeholder {
+    color: whitesmoke;
 }
