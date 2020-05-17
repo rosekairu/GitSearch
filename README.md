@@ -1,27 +1,32 @@
 # GitSearch
 
+An Angular app that let's users enter a GitHub username into a form, submit it, and see names and descriptions of various Projects that, that person's public repositories holds. A person can also look for repositories regarding different topics in Tech and engage in a Forum!
+
+Current version date 2020 ## By **Rose Kairu**
+
+## Description
+
+User may enter a GitHub username into a form, submit it, and see names and descriptions of various Projects that, that person's public repositories holds.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
-## Development server
+## Setup/Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Internet connection.
+Angular installation.
+Node Installation.
+Clone [https://github.com/rosekairu/GitSearch]
+Go inside the folder that contains the project.
+Run ng serve for a dev server. Navigate to a browser and [http://localhost:4200/].
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+GitSearch website was developed using HTML5, CSS, Bootstrap CSS, Angular and Typescript.
 
-## Build
+## Support and contact details
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Incase of any issues arising from using the Ghanaian Akan Name Generator website kindly reach out to me via email at rosekairu@gmail.com
 
-## Running unit tests
+### [MIT License](https://github.com/rosekairu/Quotes/blob/master/LICENSE)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2020 **Rose Kairu**
