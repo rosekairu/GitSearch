@@ -62,7 +62,7 @@ export class ProfileService {
       description: string;
       created_at: Date;
       updated_at: Date;
-      pushed_at: Date;
+      languages: string;
     }
 
     let searchrepos =
@@ -85,7 +85,7 @@ export class ProfileService {
                 gitreposresults[index].description,
                 gitreposresults[index].created_at,
                 gitreposresults[index].updated_at,
-                gitreposresults[index].updated_at
+                gitreposresults[index].languages
               );
               //pushing new repo results in repository property
               this.repositories.push(repository);

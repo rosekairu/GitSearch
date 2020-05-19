@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-md-6">
                         <h3> <u> User Profile </u></h3>
-                        <ul class='list-group' style="color: teal;">
+                        <ul class='list-group'>
                             <p class="card-text" style="color:cyan;"><b>Bio :&nbsp; {{gitUsers.bio}}</b></p>
                             <p class="card-text" style="color:cyan;"><b>Location :&nbsp; {{gitUsers.location}}</b>
                             </p>
@@ -50,6 +50,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <p>Languages : {{repository.languages}}</p>
                                     <p>Created : {{repository.created_at|date|uppercase}}</p>
                                     <p>Updated : {{repository.updated_at|date|uppercase}}</p>
                                 </div>
@@ -58,6 +59,5 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>

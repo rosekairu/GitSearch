@@ -5,6 +5,6 @@ export class Repo {
     public description: string,
     public created_at: Date,
     public updated_at: Date,
-    public pushed_at: Date
+    public languages: string
   ) {}
 }
