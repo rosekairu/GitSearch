@@ -27,6 +27,6 @@ GitSearch website was developed using HTML5, CSS, Bootstrap CSS, Angular and Typ
 
 Incase of any issues arising from using the Ghanaian Akan Name Generator website kindly reach out to me via email at rosekairu@gmail.com
 
-### [MIT License](https://github.com/rosekairu/Quotes/blob/master/LICENSE)
+### [MIT License](https://github.com/rosekairu/GitSearch/blob/master/LICENSE)
 
 Copyright (c) 2020 **Rose Kairu**
