@@ -1,16 +1,9 @@
-<div class="container" style="margin-top: 1in;">
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-            <form class="form-inline active-lightcyan-4">
-                <input class="form-control mr-sm-2 mr-3 w-75" type="search" placeholder="Enter Github Username" [(ngModel)]="searchUser" name="searchUser" aria-label="Search">
-                <button class="btn btn-outline-success my-2 btn-sm-0" (click)="search()" type="submit">Search<span
-            class="material-icons">
-            search
-          </span> </button>
-            </form>
-        </div>
-        <div class="col-sm-1"></div>
-    </div>
+<form class="form-inline">
+    <label for="search">Search </label>
+    <input style="margin:20px" type="text" required class="form-control" id="search" placeHolder="Enter Username" name="searchSome" [(ngModel)]="searchSome" name="term" #term='ngModel' ng-required="true">
 
-</div>
+    <div [hidden]="term.valid || term.pristine" class="validation">
+        <p style="color: crimson;">User-Name is Required</p>
+    </div>
+    <button type="reset" class="btn btn-danger" (click)="search()" (click)="reposSearch()">Search</button>
+</form>

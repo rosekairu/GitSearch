@@ -1,60 +1,8 @@
-aside {
-    display: block;
-    position: relative;
-}
-
-aside h3 {
-    font: bold 18px Sans-Serif;
-    letter-spacing: 2px;
-    color: #4CAF50;
-    transform: rotate(-45deg);
-}
-
-.navbar-brand {
-    margin-left: 30px;
-}
-
-.nav-item {
-    padding: 2px;
-    margin-left: 50px;
-}
-
-.navbar {
+nav {
+    margin-bottom: 1%;
+    align-items: center;
+    z-index: 1;
+    position: sticky;
+    top: 0;
     width: 100%;
-    background-color: #555;
-    overflow: auto;
-}
-
-.navbar a {
-    padding: 12px;
-    color: aqua;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.navbar a:hover {
-    background-color: darkslategray;
-}
-
-.nav-item1:active {
-    background-color: darkslategray;
-}
-
-.nav-item2:active {
-    background-color: darkturquoise;
-}
-
-a:active {
-    background-color: darkslategray;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-
-@media screen and (max-width: 500px) {
-    .navbar a {
-        float: none;
-        display: block;
-    }
 }

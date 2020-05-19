@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Repo } from '../../repo';
 import { User } from '../../user';
-import { HttpServiceService } from '../../Services/http-service.service';
+import { ProfileService } from '../../Services/profile.service';
 
 @Component({
   selector: 'app-git-search',
@@ -9,29 +9,34 @@ import { HttpServiceService } from '../../Services/http-service.service';
   styleUrls: ['./git-search.component.css'],
 })
 export class GitSearchComponent implements OnInit {
-  theUsers: User[];
-  theRepositories: Repo[];
+  gitUsers: User;
+  repositories: Repo[] = [];
 
-  constructor(private http: HttpServiceService) {}
+  constructor(public profileService: ProfileService) {}
 
   ngOnInit() {
-    this.myName('RoseKairu');
+    this.searchGit('rosekairu');
+    this.repoSearch('rosekairu');
   }
-  myName(userName) {
-    this.http.userSearch(userName).then(
-      (success) => {
-        this.theUsers = this.http.userProfile;
-        console.log(this.theUsers);
-      },
 
+  //searching for users
+  searchGit(searchSome) {
+    this.profileService.searchGit(searchSome).then(
+      (success) => {
+        this.gitUsers = this.profileService.user;
+      },
       (error) => {
         console.log(error);
       }
     );
-    this.http.myRepo(userName).then(
+  }
+
+  //getting repositories.
+  repoSearch(searchSome) {
+    this.profileService.getRepos(searchSome).then(
       (success) => {
-        this.theRepositories = this.http.userRepository;
-        console.log(this.theRepositories);
+        this.repositories = this.profileService.repositories;
+        console.log(this.repositories);
       },
       (error) => {
         console.log(error);

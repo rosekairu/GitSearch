@@ -8,76 +8,96 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ProfileService {
-  userName: User;
-  gitRepos: Repo;
+  user: User;
+  repositories: Repo[] = [];
 
   constructor(private http: HttpClient) {
-    this.userName = new User('', '', '', 0, 0, 0, new Date());
-    this.gitRepos = new Repo('', '', '', '', new Date());
+    this.user = new User('', '', '', 0, new Date(), 0, '');
   }
 
-  searchUserName(searchUser: string) {
+  apikey = environment.apiKey;
+
+  //helps in searching for a user name only.
+  searchGit(searchSome: string) {
     interface ApiResponse {
-      name: string;
       login: string;
       avatar_url: string;
+      location: string;
       public_repos: number;
+      created_at: Date;
       followers: number;
-      following: number;
-      created_at: Date;
+      bio: string;
     }
+    //link with input as searchSome
 
-    return new Promise((resolve, reject) => {
+    let searchUser =
+      'https://api.github.com/users/' +
+      searchSome +
+      '?access_token=' +
+      this.apikey;
+    //promise
+    let promise = new Promise((resolve, reject) => {
       this.http
-        .get<ApiResponse>(
-          'https://api.github.com/users/' +
-            searchUser +
-            '?access_token=' +
-            environment.apiKey
-        )
-        .toPromise()
-        .then(
-          (result) => {
-            this.userName = result;
-            console.log(this.userName);
-            resolve();
-          },
-          (error) => {
-            console.log(error);
-            reject();
-          }
-        );
-    });
-  }
-
-  getRepo(searchUser) {
-    interface Repo {
-      name: string;
-      html_url: string;
-      description: string;
-      language: string;
-      created_at: Date;
-    }
-
-    return new Promise((resolve, reject) => {
-      this.http
-        .get<Repo>(
-          'https://api.github.com/users/' +
-            searchUser +
-            '/repo?order=created&sort=asc?access_token=' +
-            environment.apiKey
-        )
+        .get<ApiResponse>(searchUser)
         .toPromise()
         .then(
           (results) => {
-            this.gitRepos = results;
+            this.user = results;
+
             resolve();
           },
           (error) => {
-            console.log(error);
+            alert('User Name Cannot be found');
             reject();
           }
         );
     });
+    return promise;
+  }
+  //function receiving event and getting data from the url
+  getRepos(searchSome) {
+    interface ApiResponse {
+      name: string;
+      html_url: string;
+      description: string;
+      created_at: Date;
+      updated_at: Date;
+      pushed_at: Date;
+    }
+
+    let searchrepos =
+      'https://api.github.com/users/' +
+      searchSome +
+      '/repos?access_token=' +
+      this.apikey;
+    let promise = new Promise((resolve, reject) => {
+      this.http
+        .get<ApiResponse[]>(searchrepos)
+        .toPromise()
+        .then(
+          (gitreposresults) => {
+            this.repositories = [];
+
+            for (let index = 0; index < gitreposresults.length; index++) {
+              let repository = new Repo(
+                gitreposresults[index].name,
+                gitreposresults[index].html_url,
+                gitreposresults[index].description,
+                gitreposresults[index].created_at,
+                gitreposresults[index].updated_at,
+                gitreposresults[index].updated_at
+              );
+              //pushing new repo results in repository property
+              this.repositories.push(repository);
+            }
+            resolve();
+          },
+          (error) => {
+            alert('Repositories Cannot be found');
+            reject();
+          }
+        );
+    });
+    return promise;
   }
 }
