@@ -1,3 +1,5 @@
+[![codebeat badge](https://codebeat.co/badges/dbe48edd-409e-419c-a767-d9e0277fefab)](https://codebeat.co/projects/github-com-rosekairu-gitsearch-master)
+
 # GitSearch
 
 An Angular app that let's users enter a GitHub username into a form, submit it, and see names and descriptions of various Projects that, that person's public repositories holds. A person can also look for repositories regarding different topics in Tech and engage in a Forum!
@@ -25,7 +27,7 @@ GitSearch website was developed using HTML5, CSS, Bootstrap CSS, Angular and Typ
 
 ## Support and contact details
 
-Incase of any issues arising from using the Ghanaian Akan Name Generator website kindly reach out to me via email at rosekairu@gmail.com
+Incase of any issues arising from using the GitSearch website kindly reach out to me via email at rosekairu@gmail.com
 
 ### [MIT License](https://github.com/rosekairu/GitSearch/blob/master/LICENSE)
 
